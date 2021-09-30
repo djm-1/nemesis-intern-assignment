@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemesis internship</title>
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Merriweather:900&family=Roboto:300,400,500,700,900&display=swap">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mdbootstrap4-pro@1.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mdbootstrap4-pro@1.1.0/css/mdb.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mdbootstrap4-pro@1.1.0/css/style.css">
+</head>
+<body style="background-color:whitesmoke;">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark special-color">
+        <a class="navbar-brand h4-responsive" href="/" style="font-family: Merriweather;">Nemesis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">User list</a>
+          </li>
+
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link">Welcome, {{user.username}} !</a>
+          </li>
+          </ul>
+          <a href="/logout/" class="btn btn-danger ml-auto mr-0 btn-md">Log out</a>
+          {% else %}
+          </ul>
+            <a href="{% url 'signup' %}" class="btn btn-success ml-auto mr-0 btn-md">Sign Up</a>
+          {% endif %}
+          
+        </div>
+      </nav>
+{% block content %}
+{% endblock %}
+
+<!-- footer -->
+
+<!-- MDB -->
+
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/mdbootstrap4-pro@1.1.0/js/jquery.min.js"></script>
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/mdbootstrap4-pro@1.1.0/js/popper.min.js"></script>
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/mdbootstrap4-pro@1.1.0/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/mdbootstrap4-pro@1.1.0/js/mdb.min.js"></script>    
+</body>
+</html>
